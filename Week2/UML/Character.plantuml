@@ -1,0 +1,23 @@
+@startuml
+
+enum Status {
+    Alive
+    Dead
+    unknown
+}
+
+class Character {
+    - int id
+    - String name
+    - Status status
+    + int getId()
+    + void setId()
+    + String getName()
+    + void setName()
+    + Status getStatus()
+    + void setStatus()
+}
+
+Status -> Character
+
+@enduml
