@@ -6,18 +6,32 @@ enum Status {
     unknown
 }
 
+enum Gender {
+    Female
+    Male
+    Genderless
+    unknown
+}
+
 class Character {
     - int id
     - String name
     - Status status
+    - Gender gender
+    - String[] episode
     + int getId()
     + void setId()
     + String getName()
     + void setName()
     + Status getStatus()
     + void setStatus()
+    + Gender getGender()
+    + void setGender()
+    + String[] getEpisode()
+    + void setEpisode()
 }
 
 Status -> Character
+Gender -> Character
 
 @enduml
