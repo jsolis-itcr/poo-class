@@ -11,7 +11,13 @@ import java.util.ArrayList;
 
 public class Main {
 
+    /**
+     *
+     * @param o is the unparsed object
+     * @return a Character parsed class
+     */
     public static Character mapCharacter(JSONObject o) {
+        // Using get methods to get info from JSON and parsing to specific data types
         int id = o.getInt("id");
         String name = o.getString("name");
         Status status = o.getEnum(Status.class, "status");
@@ -48,6 +54,7 @@ public class Main {
             JSONArray resultsList = (JSONArray) responseBody.get("results");
             ArrayList<Character> characterList = new ArrayList<>();
             for (int i = 0; i < resultsList.length(); i++) {
+                // Goes through every element of the response and calls the map function
                 JSONObject character = (JSONObject) resultsList.get(i);
                 characterList.add(mapCharacter(character));
             }
